@@ -1,0 +1,20 @@
+/* Clean and styled tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th, td {
+  border: 1px solid #f0ecec;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #f3f0f0;
+}
+
+thead {
+  background-color: #007BFF;
+  color: white;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome Banner</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    #welcomeBanner {
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: white;
+      padding: 1.5rem 2rem;
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    #welcomeBanner span {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #ffea00;
+    }
+
+    .highlight {
+      background-color: #fff9c4;
+      border-left: 6px solid #fdd835;
+      padding: 1rem 1.5rem;
+      margin: 2rem auto;
+      width: 80%;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 600px) {
+      #welcomeBanner {
+        font-size: 1rem;
+        padding: 1rem;
+      }
+      .highlight {
+        width: 90%;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="welcomeBanner">
+    Welcome back, <strong>Tejas!</strong> 
+    <span>🎉 Hurry Special Discount Today!</span>
+  </div>
+  <p class="highlight">✨ Explore your favorite events now and make the most of today!</p>
+</body>
+</html>

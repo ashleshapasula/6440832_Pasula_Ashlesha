@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Preferences</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    select, button {
+      font-size: 1rem;
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin: 10px;
+      outline: none;
+    }
+
+    select {
+      background-color: #fff;
+      min-width: 220px;
+    }
+
+    button {
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #e55353;
+    }
+
+    .info {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 Select Your Preferred Event</h1>
+
+  <select id="eventType" onchange="savePreference()">
+    <option value="">Choose your event type</option>
+    <option value="music">🎵 Music</option>
+    <option value="tech">💻 Tech</option>
+  </select>
+
+  <button onclick="clearPrefs()">Clear Preferences</button>
+
+  <p class="info" id="savedMsg"></p>
+
+  <script>
+    function savePreference() {
+      const selected = document.getElementById("eventType").value;
+      localStorage.setItem("preferredEvent", selected);
+      document.getElementById("savedMsg").textContent = `Saved: ${selected.charAt(0).toUpperCase() + selected.slice(1)} event preference.`;
+    }
+
+    function clearPrefs() {
+      localStorage.clear();
+      sessionStorage.clear();
+      document.getElementById("eventType").value = "";
+      document.getElementById("savedMsg").textContent = "Preferences cleared.";
+      alert("Preferences cleared");
+    }
+
+    window.onload = function() {
+      const saved = localStorage.getItem("preferredEvent");
+      if (saved) {
+        document.getElementById("eventType").value = saved;
+        document.getElementById("savedMsg").textContent = `Loaded: ${saved.charAt(0).toUpperCase() + saved.slice(1)} event preference.`;
+      }
+    };
+  </script>
+</body>
+</html>

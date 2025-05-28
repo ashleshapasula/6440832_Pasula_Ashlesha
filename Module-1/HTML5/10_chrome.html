@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Debugging with Chrome DevTools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f9f9f9, #d6e4f0);
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #34495e;
+    }
+
+    .note {
+      background-color: #eaf2f8;
+      padding: 15px;
+      border-left: 6px solid #3498db;
+      display: inline-block;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔧 Debugging with Chrome DevTools</h1>
+  <p>Open Chrome Developer Tools (F12 or right-click → Inspect) and check the console for output.</p>
+
+  <div class="note">
+    Tip: Use breakpoints and the "Sources" tab to inspect variable values step by step.
+  </div>
+
+  <footer>
+    Console logs appear below in the browser's developer tools.
+  </footer>
+
+  <script>
+    console.log("🛠️ Debugging starts here");
+    let x = 10;
+    let y = 20;
+    let result = x + y;
+    console.log("✅ Result is:", result);
+  </script>
+</body>
+</html>

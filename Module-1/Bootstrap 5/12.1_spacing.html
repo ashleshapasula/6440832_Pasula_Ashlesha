@@ -1,0 +1,23 @@
+<div class="container mt-4" style="max-width: 600px;">
+  <div class="bg-light m-3 p-3 rounded shadow-sm text-center" style="font-weight: 600; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    Margin 3 and Padding 2
+  </div>
+  <div class="bg-secondary text-white mt-4 py-5 rounded shadow-lg text-center" style="font-weight: 600; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    Margin-top 4 and Padding-y 5
+  </div>
+</div>
+
+<script>
+  // Add hover effect
+  const boxes = document.querySelectorAll('.bg-light, .bg-secondary');
+  boxes.forEach(box => {
+    box.addEventListener('mouseenter', () => {
+      box.style.transform = 'translateY(-5px)';
+      box.style.boxShadow = '0 12px 25px rgba(0, 0, 0, 0.15)';
+    });
+    box.addEventListener('mouseleave', () => {
+      box.style.transform = 'translateY(0)';
+      box.style.boxShadow = '';
+    });
+  });
+</script>

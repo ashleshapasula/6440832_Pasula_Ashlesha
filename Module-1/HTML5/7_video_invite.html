@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Promo Video</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 50px 20px;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    video {
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      max-width: 100%;
+      height: auto;
+    }
+
+    #status {
+      margin-top: 15px;
+      font-size: 1rem;
+      color: #4b5563;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body onbeforeunload="return 'Are you sure you want to leave? Your changes may not be saved.'">
+  <h1>🎬 Event Promo Preview</h1>
+  <video width="480" height="320" controls oncanplay="document.getElementById('status').textContent='✅ Video ready to play!'">
+    <source src="promo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p id="status"></p>
+</body>
+</html>

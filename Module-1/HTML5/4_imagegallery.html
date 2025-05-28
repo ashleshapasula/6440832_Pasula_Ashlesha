@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Gallery</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f9fc;
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      color: #2c3e50;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .caption {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #34495e;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="caption">🎉 Community Events Gallery 🎉</h1>
+
+  <div class="gallery">
+    <img src="event1.jpg" alt="Festival" title="Festival" class="gallery-img">
+    <img src="event2.jpg" alt="Workshop" title="Workshop" class="gallery-img">
+    <img src="event3.jpg" alt="Concert" title="Concert" class="gallery-img">
+    <img src="event4.jpg" alt="Seminar" title="Seminar" class="gallery-img">
+    <img src="event5.jpg" alt="Art Show" title="Art Show" class="gallery-img">
+    <img src="event6.jpg" alt="Fundraiser" title="Fundraiser" class="gallery-img">
+  </div>
+
+</body>
+</html>

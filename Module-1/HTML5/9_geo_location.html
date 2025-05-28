@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find Nearby Events</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #locationOutput {
+      margin-top: 25px;
+      font-size: 1.1rem;
+      color: #444;
+      padding: 10px 20px;
+      background-color: #ffffffdd;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      min-width: 280px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>📍 Find Nearby Events</h1>
+  <button onclick="getLocation()">Show My Location</button>
+  <p id="locationOutput">Your location will appear here.</p>
+
+  <script>
+    function getLocation() {
+      const output = document.getElementById("locationOutput");
+      output.textContent = "Fetching location...";
+      
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError, {
+          enableHighAccuracy: true,
+          timeout: 10000
+        });
+      } else {
+        output.textContent = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showPosition(position) {
+      document.getElementById("locationOutput").textContent =
+        `🌍 Latitude: ${position.coords.latitude.toFixed(5)}, Longitude: ${position.coords.longitude.toFixed(5)}`;
+    }
+
+    function showError(error) {
+      let message;
+      switch(error.code) {
+        case error.PERMISSION_DENIED:
+          message = "Permission denied. Please enable location access.";
+          break;
+        case error.POSITION_UNAVAILABLE:
+          message = "Location information is unavailable.";
+          break;
+        case error.TIMEOUT:
+          message = "The request to get your location timed out.";
+          break;
+        default:
+          message = "An unknown error occurred.";
+          break;
+      }
+      document.getElementById("locationOutput").textContent = `⚠️ Error: ${message}`;
+    }
+  </script>
+</body>
+</html>

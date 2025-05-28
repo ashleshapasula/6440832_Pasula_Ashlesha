@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 18.1 - Modal Popup</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .modal-content {
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .modal-header {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      color: white;
+      border-bottom: none;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+    }
+    .modal-title {
+      font-weight: 700;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .modal-footer .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      transition: background-color 0.3s ease;
+    }
+    .modal-footer .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #004085;
+    }
+    .btn-close {
+      filter: brightness(0) invert(1);
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+    .btn-close:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="p-4 text-center bg-light">
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch Modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0-1A6 6 0 1 1 8 2a6 6 0 0 1 0 12z"/>
+              <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 .875-.252 1.02-.598l.088-.416c.07-.31.123-.417.336-.417h.546v-.676h-.574c-.305 0-.36-.146-.288-.469l.738-3.468c.194-.897-.105-1.319-.808-1.319-.545 0-.875.252-1.02.598l-.088.416zm-1.065 4.33c-.118 0-.21-.084-.21-.19 0-.105.092-.189.21-.189.118 0 .21.084.21.189 0 .106-.092.19-.21.19z"/>
+            </svg>
+            Modal Title
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body fs-5">
+          This is the modal body content. You can add more detailed information here.
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary btn-lg">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
